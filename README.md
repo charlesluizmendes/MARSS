@@ -59,7 +59,7 @@ $ cd ../../../src
 
 ## Copiando os arquivos de configurações:
 
-Copie e substitua os arquivos de configuracoes [riscv64_inorder_soc.cfg]() e [riscv64_outoforder_soc.cfg]() para a pasta "configs" do marss-riscv
+Copie e substitua os arquivos de configuracoes [riscv64_inorder_soc.cfg](https://github.com/charlesluizmendes/MARSS/blob/main/configs/riscv64_inorder_soc.cfg) e [riscv64_outoforder_soc.cfg](https://github.com/charlesluizmendes/MARSS/blob/main/configs/riscv64_outoforder_soc.cfg) para a pasta "configs" do marss-riscv
 
 ## Executando o simulador:
 
