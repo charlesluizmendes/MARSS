@@ -1,0 +1,37 @@
+* (marss-riscv): Switching to full-system simulation mode at pc = 0x0000002aaaaaa66e
+* (marss-riscv): Performance Summary:
+	* user-mode-commits: 15564492468
+	* user-mode-cycles: 18099163961
+	* user-mode-ipc: 0.8600
+	* supervisor-mode-commits: 4902855
+	* supervisor-mode-cycles: 10197641
+	* supervisor-mode-ipc: 0.4808
+	* hypervisor-mode-commits: 0
+	* hypervisor-mode-cycles: 0
+	* hypervisor-mode-ipc: -nan
+	* machine-mode-commits: 1452983
+	* machine-mode-cycles: 2429439
+	* machine-mode-ipc: 0.5981
+	* total-commits: 15570848306
+	* total-cycles: 18111791041
+	* total-ipc: 0.8597
+	* simulation-time: 2778328 milliseconds
+	* total-commits-per-millisecond: 5604
+* (marss-riscv): Saved simulation stats in ./sim_Sat_Jul_11_12_41_59_2026_.csv
+* (marss-riscv): Switching to emulation mode mode at pc = 0x0000002aaaaaa66a
+
+CoreMark Size    : 666
+Total ticks      : 14170
+Total time (secs): 14.170000
+Iterations/Sec   : 2822.865208
+Iterations       : 40000
+Compiler version : GCC8.3.0
+Compiler flags   : -O2 -DPERFORMANCE_RUN=1  -lrt
+Memory location  : Please put data memory location here
+			(e.g. code in flash, data on heap etc)
+seedcrc          : 0xefe9
+[0]crclist       : 0x46c6
+[0]crcmatrix     : 0x0fe9
+[0]crcstate      : 0x657b
+[0]crcfinal      : 0x61b1
+Cannot validate operation for these seed values, please compare with results on a known platform.

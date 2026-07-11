@@ -1,0 +1,39 @@
+* (marss-riscv): Switching to full-system simulation mode at pc = 0x0000002aaaaaa66e
+* (marss-riscv): Performance Summary:
+	* user-mode-commits: 15001654455
+	* user-mode-cycles: 17480730444
+	* user-mode-ipc: 0.8582
+	* supervisor-mode-commits: 5132968
+	* supervisor-mode-cycles: 10648514
+	* supervisor-mode-ipc: 0.4820
+	* hypervisor-mode-commits: 0
+	* hypervisor-mode-cycles: 0
+	* hypervisor-mode-ipc: -nan
+	* machine-mode-commits: 1407658
+	* machine-mode-cycles: 2354246
+	* machine-mode-ipc: 0.5979
+	* total-commits: 15008195081
+	* total-cycles: 17493733204
+	* total-ipc: 0.8579
+	* simulation-time: 2780979 milliseconds
+	* total-commits-per-millisecond: 5396
+* (marss-riscv): Saved simulation stats in ./sim_Sat_Jul_11_02_52_25_2026_.csv
+* (marss-riscv): Switching to emulation mode mode at pc = 0x0000002aaaaaa66a
+
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 12763
+Total time (secs): 12.763000
+Iterations/Sec   : 2350.544543
+Iterations       : 30000
+Compiler version : GCC8.3.0
+Compiler flags   : -O2 -DPERFORMANCE_RUN=1  -lrt
+Memory location  : Please put data memory location here
+			(e.g. code in flash, data on heap etc)
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0x5275
+Correct operation validated. See README.md for run and reporting rules.
+CoreMark 1.0 : 2350.544543 / GCC8.3.0 -O2 -DPERFORMANCE_RUN=1  -lrt / Heap
