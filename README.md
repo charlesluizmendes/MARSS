@@ -46,8 +46,14 @@ Apos isso execute os seguintes comandos para baixar a imagem pré-compiladas de 
 
 ```
 wget https://cs.binghamton.edu/~marss-riscv/marss-riscv-images.tar.gz
+```
+```
 tar -xvzf marss-riscv-images.tar.gz
+```
+```
 cd marss-riscv-images/riscv64-unknown-linux-gnu/
+```
+```
 xz -d -k -T 0 riscv64.img.xz
 ```
 
@@ -97,6 +103,8 @@ Ao executar o simulador marss-riscv, primeiramente ajuste a data e hora do siste
 
 ```
 rc-service ntpd stop
+```
+```
 date -s "yyyy-MM-dd hh:mm:ss"
 ```
 
@@ -106,8 +114,14 @@ Para executar os banchmarks no simulador marss-riscv, precisamos baixar e compil
 
 ```
 git clone https://github.com/eembc/coremark.git
+```
+```
 cd coremark/
+```
+```
 make
+```
+```
 cd ..
 ```
 
@@ -117,8 +131,14 @@ Para executar os comandos do banchmarks no simulador marss-riscv, precisamos bai
 
 ```
 git clone https://github.com/bucaps/marss-riscv-utils.git
+```
+```
 cd marss-riscv-utils/
+```
+```
 make
+```
+```
 cd ..
 ```
 
