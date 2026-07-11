@@ -1,43 +1,43 @@
 # MARSS-RISCV Simulador
 
-Para a instalação e simulação do mesmo foi utilizado o  Ubuntu 22.04 LTS.
+Para a instalação e simulação do mesmo foi utilizado o Ubuntu 22.04 LTS.
 
 ## Ambiente Linux
 
 Instalar os pacotes para a utilizacao do marss-riscv:
 
 ```
-$ sudo apt-get update
-$ sudo apt-get install build-essential
-$ sudo apt-get install libssl-dev
-$ sudo apt-get install libsdl1.2-dev
-$ sudo apt-get install libcurl4-openssl-dev
+sudo apt-get update
+sudo apt-get install build-essential
+sudo apt-get install libssl-dev
+sudo apt-get install libsdl1.2-dev
+sudo apt-get install libcurl4-openssl-dev
 ```
 
 ## Baixando o código-fonte:
 
-Baixe o projeto no diretorio de sua preferencia:
+Baixe o projeto no diretorio de sua preferência:
 
 ```
-$ git clone https://github.com/Lab-COMPASSO/marss-riscv.git
+git clone https://github.com/Lab-COMPASSO/marss-riscv.git
 ```
 
-Acesse a pasta "src" do marss-riscv:
+Acesse a pasta "src" do simulador marss-riscv:
 
 ```
-$ cd marss-riscv/src/
+cd marss-riscv/src/
 ```
 
 Compile o marss-riscv:
 
 ```
-$ make
+make
 ```
 
 Acesse o diretorio "configs" do simulador marss-riscv:
 
 ```
-$ cd ../configs
+cd ../configs
 ```
 
 ## Baixando imagem do simulador:
@@ -45,16 +45,16 @@ $ cd ../configs
 Apos isso execute os seguintes comandos para baixar a imagem pré-compiladas de espaço do usuário, bootloader e kernel RISC-V de 32 e 64 bits:
 
 ```
-$ wget https://cs.binghamton.edu/~marss-riscv/marss-riscv-images.tar.gz
-$ tar -xvzf marss-riscv-images.tar.gz
-$ cd marss-riscv-images/riscv64-unknown-linux-gnu/
-$ xz -d -k -T 0 riscv64.img.xz
+wget https://cs.binghamton.edu/~marss-riscv/marss-riscv-images.tar.gz
+tar -xvzf marss-riscv-images.tar.gz
+cd marss-riscv-images/riscv64-unknown-linux-gnu/
+xz -d -k -T 0 riscv64.img.xz
 ```
 
 Agora podemos voltar para a pasta "src" do simulador marss-riscv:
 
 ```
-$ cd ../../../src
+cd ../../../src
 ```
 
 ## Copiando os arquivos de configurações:
@@ -63,14 +63,14 @@ Copie e substitua os arquivos de configuracoes [riscv64_inorder_soc.cfg](https:/
 
 ## Executando o simulador:
 
-Para cada modo de execução, no modo In Order e Out of Order, execute os [benchmarks](#executando-benchmarks).
+Para cada modo de execução, no modo In Order e Out of Order, execute os comandos de [Configurações](#configurando-o-simulador) e [Benchmarks](#executando-benchmarks).
 
 ### Executando no modo In Order:
 
 Execute o seguinte comando para executar o emulador marss-riscv no modo In Order:
 
 ```
-$ ./marss-riscv ../configs/riscv64_inorder_soc.cfg
+./marss-riscv ../configs/riscv64_inorder_soc.cfg
 ```
 
 ### Executando no modo Out of Order:
@@ -78,7 +78,15 @@ $ ./marss-riscv ../configs/riscv64_inorder_soc.cfg
 Execute o seguinte comando para executar o emulador marss-riscv no modo Out of Order:
 
 ```
-$ ./marss-riscv ../configs/riscv64_outoforder_soc.cfg
+./marss-riscv ../configs/riscv64_outoforder_soc.cfg
+```
+
+### Parando o simulador:
+
+Para parar a execução do emulador marss-riscv execute o seguinte comando:
+
+```
+halt
 ```
 
 ## Configurando o simulador:
@@ -88,30 +96,30 @@ $ ./marss-riscv ../configs/riscv64_outoforder_soc.cfg
 Ao executar o simulador marss-riscv, primeiramente ajuste a data e hora do sistema:
 
 ```
-$ rc-service ntpd stop
-$ date -s "yyyy-MM-dd hh:mm:ss"
+rc-service ntpd stop
+date -s "yyyy-MM-dd hh:mm:ss"
 ```
 
 ### Baixando o CoreMark:
 
-Para executar os banchmarks no simulador marss-riscv, precisamos baixar o CoreMark e compilar o mesmo:
+Para executar os banchmarks no simulador marss-riscv, precisamos baixar e compilar o CoreMark:
 
 ```
-$ git clone https://github.com/eembc/coremark.git
-$ cd coremark/
-$ make
-$ cd ..
+git clone https://github.com/eembc/coremark.git
+cd coremark/
+make
+cd ..
 ```
 
 ### Baixando o utilitário do simulador:
 
-Para executar os comandos do banchmarks no simulador marss-riscv, precisamos baixar e compilar o mesmo:
+Para executar os comandos do banchmarks no simulador marss-riscv, precisamos baixar e compilar o marss-riscv Utils:
 
 ```
-$ git clone https://github.com/bucaps/marss-riscv-utils.git
-$ cd marss-riscv-utils/
-$ make
-$ cd ..
+git clone https://github.com/bucaps/marss-riscv-utils.git
+cd marss-riscv-utils/
+make
+cd ..
 ```
 
 ## Executando Benchmarks
@@ -124,7 +132,7 @@ As três execuções seguintes não representam benchmarks diferentes, mas sim d
 
 ```
 simstart; \
-  ./coremark/coremark.exe 0x0 0x0 0x66 0 7 1 2000 > run_ec1.log; \
+  ./coremark/coremark.exe 0x0 0x0 0x66 0 7 1 2000 > run_1.log; \
 simstop;
 ```
 
@@ -141,7 +149,7 @@ trivialmente pequenas.
 
 ```
 simstart; \
-  ./coremark/coremark.exe 0x3415 0x3415 0x66 0 7 1 2000 > run_ec2.log; \
+  ./coremark/coremark.exe 0x3415 0x3415 0x66 0 7 1 2000 > run_2.log; \
 simstop;
 ```
 
@@ -152,8 +160,12 @@ simstop;
 
 ```
 simstart; \
-  ./coremark/coremark.exe 8 8 8 0 7 1 2000 > run_ec3.log; \
+  ./coremark/coremark.exe 8 8 8 0 7 1 2000 > run_3.log; \
 simstop;
 ```
 
 * Seeds incomuns: dado o valor baixo (8), alterações no padrão de acesso de lista e FSM são mínimas, mas suficientes para invalidar o CRC de referência.
+
+## Logs
+
+Para acessar os logs das execuções anteriores, clique aqui para [In Order](https://github.com/charlesluizmendes/MARSS/blob/main/logs/inorder) e aqui para [Out of Order](https://github.com/charlesluizmendes/MARSS/blob/main/logs/outoforder).
